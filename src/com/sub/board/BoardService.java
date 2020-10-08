@@ -7,9 +7,7 @@ public class BoardService {
 	private BoardDAO boardDAO;
 	
 	public BoardService() {
-		
 		boardDAO = new BoardDAO();
-		
 	}
 	
 	public ArrayList<BoardDTO> boardList() throws Exception{

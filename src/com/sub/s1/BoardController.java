@@ -3,6 +3,7 @@ package com.sub.s1;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -59,6 +60,9 @@ public class BoardController extends HttpServlet {
 			request.setAttribute("list", ar);
 			
 		}
+		
+		RequestDispatcher view = request.getRequestDispatcher(info);
+		view.forward(request, response);
 	}
 
 	/**

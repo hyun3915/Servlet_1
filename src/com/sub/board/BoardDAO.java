@@ -23,7 +23,7 @@ private DBConnector dbConnector;
 		Connection con = dbConnector.getConnect();
 		
 		//4.SQL문 생성
-		String sql = "select * from board order by num ASC";
+		String sql = "select * from board";
 				
 		//5. 미리전송
 		PreparedStatement st = con.prepareStatement(sql);
@@ -40,7 +40,7 @@ private DBConnector dbConnector;
 			boardDTO.setContents(rs.getString("contents"));
 			boardDTO.setRegDate(rs.getDate("regDate"));
 			boardDTO.setHit(rs.getLong("hit"));
-			
+			ar.add(boardDTO);
 		}
 		
 		rs.close();
